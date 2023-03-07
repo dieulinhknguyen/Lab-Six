@@ -17,6 +17,15 @@ def encoder(user_password):  # Function to encode password
     return encoded_password
 
 
+def decoder(user_password):  # Function to decode password
+    decoded_password = ""
+    for digit in user_password:
+        digit_int = int(digit) - 3
+        digit_str = str(digit_int)
+        decoded_password += digit_str
+    return decoded_password
+
+
 def main():
     menu()
     user_choice = int(input("Please enter an option: "))

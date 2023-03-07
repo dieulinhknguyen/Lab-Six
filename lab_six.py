@@ -16,6 +16,31 @@ def encoder(user_password):  # Function to encode password
         encoded_password += digit_str
     return encoded_password
 
+# Name: David Fackson
+def decoder(encoded_password):
+    new_password = ''
+    for i in range(len(encoded_password)):
+        if encoded_password[i] == '0':
+            new_password = new_password + '7'
+        elif encoded_password[i] == '1':
+            new_password = new_password + '8'
+        elif encoded_password[i] == '2':
+            new_password = new_password + '9'
+        elif encoded_password[i] == '3':
+            new_password = new_password + '0'
+        elif encoded_password[i] == '4':
+            new_password = new_password + '1'
+        elif encoded_password[i] == '5':
+            new_password = new_password + '2'
+        elif encoded_password[i] == '6':
+            new_password = new_password + '3'
+        elif encoded_password[i] == '7':
+            new_password = new_password + '4'
+        elif encoded_password[i] == '8':
+            new_password = new_password + '5'
+        elif encoded_password[i] == '9':
+            new_password = new_password + '6'
+    return new_password
 
 def main():
     menu()
@@ -29,7 +54,7 @@ def main():
             menu()
             user_choice = int(input("Please enter an option: "))
         elif user_choice == 2:  # Display encoded password
-            print(f"The encoded password is {encoder(global_password)}, and the original password is {global_password}.\n")
+            print(f"The encoded password is {encoder(global_password)}, and the original password is {decoder(encoded_password)}.\n")
             menu()
             user_choice = int(input("Please enter an option: "))
         else:
